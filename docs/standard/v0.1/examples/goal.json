@@ -1,0 +1,19 @@
+{
+  "event_id": "evt_0003",
+  "match_id": "match_2026_0905_01",
+  "team_id": "team_a",
+  "player_id": "player_9",
+  "type": "goal",
+  "subtype": "open_play",
+  "timestamp": 129.1,
+  "period": 1,
+  "location": { "x": 89.4, "y": 48.6 },
+  "end_location": { "x": 100.0, "y": 50.2 },
+  "outcome": "successful",
+  "related_event_id": "evt_0002",
+  "metadata": {
+    "body_part": "right_foot",
+    "xg": 0.32,
+    "assist_player_id": "player_10"
+  }
+}

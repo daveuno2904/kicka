@@ -1,0 +1,19 @@
+{
+  "event_id": "evt_0002",
+  "match_id": "match_2026_0905_01",
+  "team_id": "team_a",
+  "player_id": "player_9",
+  "type": "shot",
+  "subtype": "open_play",
+  "timestamp": 128.9,
+  "period": 1,
+  "location": { "x": 89.4, "y": 48.6 },
+  "end_location": { "x": 100.0, "y": 50.2 },
+  "outcome": "on_target",
+  "related_event_id": "evt_0001",
+  "metadata": {
+    "body_part": "right_foot",
+    "xg": 0.32,
+    "under_pressure": true
+  }
+}

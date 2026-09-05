@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/daveuno2904/kicka/schemas/v0.1/event.schema.json",
+  "title": "KICKA Event",
+  "description": "Schema for a single match event in the KICKA standard v0.1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "match_id",
+    "team_id",
+    "player_id",
+    "type",
+    "timestamp",
+    "period",
+    "location"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Unique identifier for this event"
+    },
+    "match_id": {
+      "type": "string",
+      "description": "Identifier of the match this event belongs to"
+    },
+    "team_id": {
+      "type": "string",
+      "description": "Identifier of the team performing the event"
+    },
+    "player_id": {
+      "type": "string",
+      "description": "Identifier of the player performing the event"
+    },
+    "type": {
+      "type": "string",
+      "description": "Event type, e.g. pass, shot, goal, tackle, foul",
+      "enum": [
+        "pass",
+        "shot",
+        "goal",
+        "tackle",
+        "foul",
+        "save",
+        "interception",
+        "clearance",
+        "dribble",
+        "cross",
+        "corner",
+        "throw_in",
+        "offside",
+        "card",
+        "substitution"
+      ]
+    },
+    "subtype": {
+      "type": ["string", "null"],
+      "description": "Optional refinement of the event type, e.g. through_ball for pass"
+    },
+    "timestamp": {
+      "type": "number",
+      "description": "Seconds elapsed since the start of the period"
+    },
+    "period": {
+      "type": "integer",
+      "description": "Match period (1 = first half, 2 = second half, 3/4 = extra time, 5 = penalties)",
+      "minimum": 1
+    },
+    "location": {
+      "type": "object",
+      "description": "Pitch coordinates where the event occurred",
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number", "minimum": 0, "maximum": 100 },
+        "y": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "end_location": {
+      "type": ["object", "null"],
+      "description": "Pitch coordinates where the event concluded, if applicable",
+      "properties": {
+        "x": { "type": "number", "minimum": 0, "maximum": 100 },
+        "y": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "outcome": {
+      "type": ["string", "null"],
+      "description": "Result of the event, e.g. complete, incomplete, on_target, blocked",
+      "enum": [
+        "complete",
+        "incomplete",
+        "on_target",
+        "off_target",
+        "blocked",
+        "saved",
+        "successful",
+        "unsuccessful",
+        null
+      ]
+    },
+    "related_event_id": {
+      "type": ["string", "null"],
+      "description": "Identifier of a related event, e.g. the pass leading to a shot"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional freeform attributes specific to the event type",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
