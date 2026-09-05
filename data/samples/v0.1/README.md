@@ -1,7 +1,31 @@
-# Sample Data — v0.1
+# Open Football Event Data Standard — v0.1
 
-Sample match event files conforming to [`schemas/v0.1/event.schema.json`](../../../schemas/v0.1/event.schema.json).
+### Purpose
 
-- `match_2026_0905_01.json` — a short sequence of events (pass → shot → goal) for one match, illustrating `related_event_id` chaining.
+v0.1 defines a common structure for representing football match events
+in a machine-readable format.
 
-These files are used by the tests in [`tests/`](../../../tests) to validate the schema and tooling.
+The standard focuses on event-level match data including:
+
+- passes
+- shots
+- carries
+- dribbles
+- tackles
+- interceptions
+- clearances
+- fouls
+- duels
+- ball recoveries
+- set pieces
+- disciplinary events
+- match events
+
+The standard is designed to be:
+
+- open
+- machine-readable
+- extensible
+- provider-independent
+- suitable for analytics
+- suitable for manual annotation
